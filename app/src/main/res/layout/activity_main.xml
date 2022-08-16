@@ -41,13 +41,13 @@
         android:ems="10"
         android:hint="Digite o nome da Cidade"
         android:inputType="textPersonName"
-        app:layout_constraintBottom_toTopOf="@+id/editTextTextPersonName3"
+        app:layout_constraintBottom_toTopOf="@+id/editTextPais"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName3"
+        android:id="@+id/editTextPais"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="3dp"
@@ -69,6 +69,7 @@
         android:layout_marginTop="182dp"
         android:layout_marginEnd="32dp"
         android:layout_marginBottom="181dp"
+        android:onClick="getWeatherData"
         android:text="Consultar"
         app:layout_constraintBottom_toBottomOf="@+id/divider6"
         app:layout_constraintEnd_toEndOf="parent"

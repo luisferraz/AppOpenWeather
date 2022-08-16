@@ -15,8 +15,6 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class MainActivity extends AppCompatActivity {
-    EditText editTextCidade, editTextPais;
-    TextView output;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +25,14 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void getWeatherData(View view) {
+        TextView textViewTempAtual = findViewById(R.id.textViewTempAtual);
+        TextView textViewMaxima = findViewById(R.id.textViewMaxima);
+        TextView textViewMinima = findViewById(R.id.textViewMinima);
+        TextView textViewUmidade = findViewById(R.id.textViewUmidade);
+
+        EditText editTextCidade = findViewById(R.id.editTextCidade);
+        EditText editTextPais = findViewById(R.id.editTextPais);
+
         ProgressDialog progressDialog = new ProgressDialog(this);
         progressDialog.setMessage("Consultando clima...");
         progressDialog.show();
@@ -39,7 +45,8 @@ public class MainActivity extends AppCompatActivity {
                 if (response.isSuccessful()) {
                     Weather weather = response.body();
                     progressDialog.dismiss();
-                    output.setText(weather.toString());
+                    assert weather != null;
+                    textViewTempAtual.setText(weather.toString());
                 }
             }
 
