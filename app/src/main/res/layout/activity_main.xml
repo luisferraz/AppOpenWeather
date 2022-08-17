@@ -11,10 +11,10 @@
         android:id="@+id/textViewUmidade"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="23dp"
-        android:layout_marginTop="19dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="50dp"
         android:textSize="18sp"
-        app:layout_constraintStart_toStartOf="@+id/textView6"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView6" />
 
     <TextView
@@ -41,6 +41,7 @@
         android:ems="10"
         android:hint="Digite o nome da Cidade"
         android:inputType="textPersonName"
+        android:selectAllOnFocus="true"
         app:layout_constraintBottom_toTopOf="@+id/editTextPais"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -56,6 +57,7 @@
         android:ems="10"
         android:hint="Digite o nome do País"
         android:inputType="textPersonName"
+        android:selectAllOnFocus="false"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -70,6 +72,7 @@
         android:layout_marginEnd="32dp"
         android:layout_marginBottom="181dp"
         android:onClick="getWeatherData"
+        android:selectAllOnFocus="false"
         android:text="Consultar"
         app:layout_constraintBottom_toBottomOf="@+id/divider6"
         app:layout_constraintEnd_toEndOf="parent"
@@ -97,9 +100,7 @@
         android:layout_marginStart="1dp"
         android:layout_marginTop="85dp"
         android:layout_marginEnd="1dp"
-        android:layout_marginBottom="86dp"
         android:background="?android:attr/listDivider"
-        app:layout_constraintBottom_toTopOf="@+id/textViewTempAtual"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/buttonPesquisar" />
@@ -108,24 +109,26 @@
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="98dp"
+        android:layout_marginTop="374dp"
         android:text="Temperatura Atual"
+        android:textAlignment="center"
         android:textColor="@color/teal_700"
         android:textSize="28sp"
-        app:layout_constraintBottom_toTopOf="@+id/textView4"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textViewTempAtual"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="13dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginStart="204dp"
+        android:layout_marginTop="20dp"
+        android:textAlignment="center"
         android:textColor="@color/design_default_color_primary_variant"
         android:textSize="35sp"
         android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="@+id/textView5"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
     <TextView
@@ -165,33 +168,24 @@
         android:id="@+id/textViewMaxima"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="23dp"
+        android:layout_marginStart="50dp"
         android:layout_marginTop="19dp"
         android:textSize="18sp"
-        app:layout_constraintStart_toStartOf="@+id/textView4"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
     <TextView
         android:id="@+id/textViewMinima"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="23dp"
-        android:layout_marginTop="19dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="50dp"
         android:textSize="18sp"
-        app:layout_constraintStart_toStartOf="@+id/textView5"
+        app:layout_constraintEnd_toStartOf="@+id/textViewUmidade"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toEndOf="@+id/textViewMaxima"
         app:layout_constraintTop_toBottomOf="@+id/textView5" />
-
-    <View
-        android:id="@+id/divider5"
-        android:layout_width="0dp"
-        android:layout_height="1dp"
-        android:layout_marginTop="119dp"
-        android:layout_marginBottom="115dp"
-        android:background="?android:attr/listDivider"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/divider6" />
 
     <View
         android:id="@+id/divider6"
@@ -206,5 +200,15 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginTop="84dp"
+        android:background="?android:attr/listDivider"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewMinima" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,82 +1,165 @@
+
 package br.ufpr.tads.luis.appopenweather.model;
 
+import java.util.List;
+import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
+
 public class Weather {
-    private String cidade;
-    private String pais;
-    private Double tempAtual;
-    private Double tempMin;
-    private Double tempMax;
-    private Double umidade;
 
-    public Weather() {
+    @SerializedName("coord")
+    @Expose
+    private Coord coord;
+    @SerializedName("weather")
+    @Expose
+    private List<Weather__1> weather = null;
+    @SerializedName("base")
+    @Expose
+    private String base;
+    @SerializedName("main")
+    @Expose
+    private Main main;
+    @SerializedName("visibility")
+    @Expose
+    private Integer visibility;
+    @SerializedName("wind")
+    @Expose
+    private Wind wind;
+    @SerializedName("rain")
+    @Expose
+    private Rain rain;
+    @SerializedName("clouds")
+    @Expose
+    private Clouds clouds;
+    @SerializedName("dt")
+    @Expose
+    private Integer dt;
+    @SerializedName("sys")
+    @Expose
+    private Sys sys;
+    @SerializedName("timezone")
+    @Expose
+    private Integer timezone;
+    @SerializedName("id")
+    @Expose
+    private Integer id;
+    @SerializedName("name")
+    @Expose
+    private String name;
+    @SerializedName("cod")
+    @Expose
+    private Integer cod;
+
+    public Coord getCoord() {
+        return coord;
     }
 
-    public Weather(String cidade, String pais, Double tempAtual, Double tempMin, Double tempMax, Double umidade) {
-        this.cidade = cidade;
-        this.pais = pais;
-        this.tempAtual = tempAtual;
-        this.tempMin = tempMin;
-        this.tempMax = tempMax;
-        this.umidade = umidade;
+    public void setCoord(Coord coord) {
+        this.coord = coord;
     }
 
-    public String getCidade() {
-        return cidade;
+    public List<Weather__1> getWeather() {
+        return weather;
     }
 
-    public void setCidade(String cidade) {
-        this.cidade = cidade;
+    public void setWeather(List<Weather__1> weather) {
+        this.weather = weather;
     }
 
-    public String getPais() {
-        return pais;
+    public String getBase() {
+        return base;
     }
 
-    public void setPais(String pais) {
-        this.pais = pais;
+    public void setBase(String base) {
+        this.base = base;
     }
 
-    public Double getTempAtual() {
-        return tempAtual;
+    public Main getMain() {
+        return main;
     }
 
-    public void setTempAtual(Double tempAtual) {
-        this.tempAtual = tempAtual;
+    public void setMain(Main main) {
+        this.main = main;
     }
 
-    public Double getTempMin() {
-        return tempMin;
+    public Integer getVisibility() {
+        return visibility;
     }
 
-    public void setTempMin(Double tempMin) {
-        this.tempMin = tempMin;
+    public void setVisibility(Integer visibility) {
+        this.visibility = visibility;
     }
 
-    public Double getTempMax() {
-        return tempMax;
+    public Wind getWind() {
+        return wind;
     }
 
-    public void setTempMax(Double tempMax) {
-        this.tempMax = tempMax;
+    public void setWind(Wind wind) {
+        this.wind = wind;
     }
 
-    public Double getUmidade() {
-        return umidade;
+    public Rain getRain() {
+        return rain;
     }
 
-    public void setUmidade(Double umidade) {
-        this.umidade = umidade;
+    public void setRain(Rain rain) {
+        this.rain = rain;
     }
 
-    @Override
-    public String toString() {
-        return "Weather{" +
-                "cidade='" + cidade + '\'' +
-                ", pais='" + pais + '\'' +
-                ", tempAtual=" + tempAtual +
-                ", tempMin=" + tempMin +
-                ", tempMax=" + tempMax +
-                ", umidade=" + umidade +
-                '}';
+    public Clouds getClouds() {
+        return clouds;
     }
+
+    public void setClouds(Clouds clouds) {
+        this.clouds = clouds;
+    }
+
+    public Integer getDt() {
+        return dt;
+    }
+
+    public void setDt(Integer dt) {
+        this.dt = dt;
+    }
+
+    public Sys getSys() {
+        return sys;
+    }
+
+    public void setSys(Sys sys) {
+        this.sys = sys;
+    }
+
+    public Integer getTimezone() {
+        return timezone;
+    }
+
+    public void setTimezone(Integer timezone) {
+        this.timezone = timezone;
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public Integer getCod() {
+        return cod;
+    }
+
+    public void setCod(Integer cod) {
+        this.cod = cod;
+    }
+
 }
